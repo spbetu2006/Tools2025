@@ -33,7 +33,7 @@ shared_ptr<StreamProcessor> parseTable(Stream &stream, size_t &lines_skip) {
     }
     if (sep_ch != sep_ch2) {
         cout << g_msgSepWarn << endl;
-        lines_skip += 1 + lines;
+        lines_skip += lines;
         return NULL;
     }
 
@@ -48,9 +48,9 @@ shared_ptr<StreamProcessor> parseTable(Stream &stream, size_t &lines_skip) {
         lines_skip += 1 + lines + lines2;
         return NULL;
     }
-    if (sep_ch != sep_ch3) {
+    if (sep_ch3 != sep_ch2) {
         cout << g_msgSepWarn << endl;
-        lines_skip += 1 + lines + lines2;
+        lines_skip += lines + lines2;
         return NULL;
     }
 
